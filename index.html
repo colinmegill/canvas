@@ -2,16 +2,71 @@
 <html>
 <head>
 	<style type="text/css">
-		#theTodoEl {
-			background-color: lightblue;
-		}
-    .hour {
-      background-color: lightgrey;
-      width: 600px;
-      height: 150px;
-      margin-bottom: 20px;
+
+    #container {
+      border: 2px solid black;
+      height: 800px;
     }
-	</style>
+
+    #segments {
+      background-color: rgb(244, 244, 244);
+      width: 20%;
+      height: 75%;
+      float: right;
+    }
+    #relationships {
+      background-color: rgb(233, 233, 233);
+      width: 20%;
+      height: 37.5%;
+      float: right;
+    }
+    #channels{
+      background-color: rgb(253, 253, 253);
+      width: 20%;
+      height: 37.5%;
+      float: right;
+    }
+    #revenue{
+      background-color: rgb(250, 250, 250);
+      width: 50%;
+      height: 25%;
+      float: right;
+    }
+    #valueProp{
+      background-color: rgb(248, 248, 248);
+      height: 75%;
+      width: 20%;
+      float: right;
+    }
+    #activities{
+      background-color: rgb(250, 250, 250);
+      height: 37.5%;
+      width: 20%;
+      float: left;
+    }
+    #resources{
+      background-color: rgb(238, 238, 238);
+      height: 37.5%;
+      width: 20%;
+      
+      float: left
+    }
+    #partners{
+      height: 75%;
+      width: 20%;
+      float: left;
+    }
+    #costs{
+      background-color: lightgrey;
+      height: 25%;
+      width: 50%;
+      
+      float: left;
+    }
+	
+
+  </style>
+
 
 </head>
 <body>
@@ -23,6 +78,13 @@
 
 <div id="container"> <!-- container -->
 
+  <div id="partners">
+    <h3 class="box_heading"> Key Partners </h3>
+    <form class="boxForm" id="partnersForm">
+      <input  name="title" type="text" placeholder="+ Add a new...">
+    </form>
+  </div>
+
   <div id="segments">
     <h3 class="box_heading"> Customer Segments </h3>
     <form class="boxForm" id="segmentsForm">
@@ -30,9 +92,32 @@
     </form>
   </div>
 
+   <div id="valueProp">
+    <h3 class="box_heading"> Value Proposition </h3>
+    <form class="boxForm" id="valuePropForm">
+      <input  name="title" type="text" placeholder="+ Add a new...">
+    </form>
+  </div>
+
   <div id="relationships">
     <h3 class="box_heading"> Customer Relationships </h3>
     <form class="boxForm" id="relationshipsForm">
+      <input  name="title" type="text" placeholder="+ Add a new...">
+    </form>
+  </div>
+
+ 
+
+  <div id="activities">
+    <h3 class="box_heading"> Key Activities </h3>
+    <form class="boxForm" id="activitiesForm">
+      <input  name="title" type="text" placeholder="+ Add a new...">
+    </form>
+  </div>
+
+ <div id="resources">
+    <h3 class="box_heading"> Key Resources </h3>
+    <form class="boxForm" id="resourcesForm">
       <input  name="title" type="text" placeholder="+ Add a new...">
     </form>
   </div>
@@ -44,41 +129,6 @@
     </form>
   </div>
 
-  <div id="revenue">
-    <h3 class="box_heading"> Revenue Streams </h3>
-    <form class="boxForm" id="revenueForm">
-      <input  name="title" type="text" placeholder="+ Add a new...">
-    </form>
-  </div>
-
-  <div id="valueProp">
-    <h3 class="box_heading"> Value Proposition </h3>
-    <form class="boxForm" id="valuePropForm">
-      <input  name="title" type="text" placeholder="+ Add a new...">
-    </form>
-  </div>
-
-  <div id="activities">
-    <h3 class="box_heading"> Key Activities </h3>
-    <form class="boxForm" id="activitiesForm">
-      <input  name="title" type="text" placeholder="+ Add a new...">
-    </form>
-  </div>
-
-  <div id="resources">
-    <h3 class="box_heading"> Key Resources </h3>
-    <form class="boxForm" id="resourcesForm">
-      <input  name="title" type="text" placeholder="+ Add a new...">
-    </form>
-  </div>
-
-  <div id="partners">
-    <h3 class="box_heading"> Key Partners </h3>
-    <form class="boxForm" id="partnersForm">
-      <input  name="title" type="text" placeholder="+ Add a new...">
-    </form>
-  </div>
-
   <div id="costs">
     <h3 class="box_heading"> Cost Structure </h3>
     <form class="boxForm" id="costsForm">
@@ -86,7 +136,12 @@
     </form>
   </div>
 
-
+ <div id="revenue">
+    <h3 class="box_heading"> Revenue Streams </h3>
+    <form class="boxForm" id="revenueForm">
+      <input  name="title" type="text" placeholder="+ Add a new...">
+    </form>
+  </div>
 
 
 </div> <!-- container -->
@@ -97,5 +152,17 @@
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
 <script type="text/javascript" src="businessmodel.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $('div').click(function(){
+    $(this).({'background-color':'red'})
+  })
+})
+
+</script>
+
 </body>
 </html>
