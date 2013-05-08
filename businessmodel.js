@@ -27,7 +27,7 @@ var UniversalCollection = Backbone.Collection.extend({
   
 })
 
-/* i think the problem is that while i'm iterating over all of the models in the view i'm rendering, i'm not iterating over all of the collections and rendering a collection view for each of them. */
+/* i think the problem is that while i'm iterating over all of the models in the collectionview i'm rendering, i'm not iterating over all of the collections and rendering a collection view for each of them. */
 
 var UniversalCollectionView = Backbone.View.extend({
   render: function(){
