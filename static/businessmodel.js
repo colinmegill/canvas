@@ -34,14 +34,14 @@ var UniversalCollectionView = Backbone.View.extend({
     var that = this;
     this.collection.each(function(m){
       universalModelView = new UniversalModelView({
-        model: m
+        model: m,
+        events: {
+          "submit form": "createNew"
+        }
       })
       universalModelView.render();
       that.$el.append(universalModelView.el)
     });
-  },
-  events: {
-    "submit form": "createNew"
   },
   createNew: function(e){
     e.preventDefault();
@@ -197,6 +197,7 @@ setInterval( function() {
     type: 'POST',
     data: {
       time: Date.now()
+      title: 'this is something someone put in a box!'
     }
   });
 }, 5000);
