@@ -196,7 +196,7 @@ setInterval( function() {
     url: '/api/costs',
     type: 'POST',
     data: {
-      time: Date.now()
+      time: Date.now(),
       title: 'this is something someone put in a box!'
     }
   });

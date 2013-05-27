@@ -59,15 +59,10 @@ function genericPostHandler(req, res){
 
 
 
-
-
-
-
-
 function genericGetter(req, res) {
   
   var type = req.route.path;
-  entries.find({type: type} function(err, cursor){
+  entries.find({type: type}, function(err, cursor){
     if (err) {
       res.send(500).end();
     } else {
@@ -77,15 +72,14 @@ function genericGetter(req, res) {
         } else {
           res.json(docs);
         }
-      })
-      res.status(404).end();
+      });
     }
-  })
-}
+  });
+};
 
 
  
-mongo.connect(process.env.MONGOLAB_URI, { 
+mongo.connect("mongodb://heroku_app15573541:3vi67f8qfs8vbimtt5n2psmeoq@ds061757.mongolab.com:61757/heroku_app15573541", { 
     server: {
         auto_reconnect: true
     },
@@ -112,6 +106,9 @@ var initializeTheWorld = function(params) {
   app.listen(3000);
 
 }
+
+
+
 
 
 
